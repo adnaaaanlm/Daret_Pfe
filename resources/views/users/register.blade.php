@@ -62,6 +62,12 @@
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone">
+                                @error('phone')
+                                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
