@@ -14,12 +14,12 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@1.9.2/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Styles -->
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/components.css" rel="stylesheet">
-    <link href="css/auth.css" rel="stylesheet">
-    <link href="css/forms.css" rel="stylesheet">
-    <link href="css/media.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/components.css')}}" rel="stylesheet">
+    <link href="{{asset('css/auth.css')}}" rel="stylesheet">
+    <link href="{{asset('css/forms.css')}}" rel="stylesheet">
+    <link href="{{asset('css/media.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                 <div class="auth-logo text-center mb-5">
                     <div class="row">
                         <div class="col-md-2">
-                            <img src="images/logo-64x64.png" class="logo-img" alt="Logo">
+                            <img src="{{asset('images/logo-64x64.png')}}" class="logo-img" alt="Logo">
                         </div>
                         <div class="col-md-10">
                             <p>Argon Social Network</p>
@@ -37,16 +37,20 @@
                         </div>
                     </div>
                 </div>
-                <form action="" method="">
+                <form action="/users/auth" method="Post">
+                    @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="" placeholder="Email Address">
+                                <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                @error('email')
+                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="password" class="form-control" name="" placeholder="Password">
+                                <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="col-md-12 mb-3">
@@ -61,7 +65,7 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="form-group">
-                                <button type="button" class="btn btn-primary sign-up">Sign In</button>
+                                <button type="submit" class="btn btn-primary sign-up">Sign In</button>
                             </div>
                         </div>
                         <div class="col-md-12 text-center mt-4">
@@ -69,7 +73,7 @@
                             <a href="#" class="btn btn-outline-primary btn-sm sign-up" data-toggle="modal" data-target="#fingerprintModal">Use Fingerprint</a>
                         </div>
                         <div class="col-md-12 text-center mt-5">
-                            <span class="go-login">Not yet a member? <a href="sign-up.html">Sign Up</a></span>
+                            <span class="go-login">Not yet a member? <a href="/register">Sign Up</a></span>
                         </div>
                     </div>
                 </form>
@@ -95,11 +99,11 @@
     
 
     <!-- Core -->
-    <script src="js/jquery/jquery-3.3.1.min.js"></script>
-    <script src="js/popper/popper.min.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="{{ asset('js/jquery/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
     <!-- Optional -->
-    <script src="js/app.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
