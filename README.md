@@ -1,4 +1,4 @@
-login and register tempalte
-build the auth system login / register /forget /verifie
-build the midlleware roles
-the home page tempalte
+login and register tempalte </br>
+build the auth system login / register /forget /verifie</br>
+build the midlleware roles</br>
+the home page tempalte</br>
